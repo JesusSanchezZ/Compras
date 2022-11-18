@@ -3,6 +3,39 @@
 @include mat.core();
 
 // gama de colores
+$md-mcgpalette0: (
+    50 : #e0e6ec,
+    100 : #b3c0cf,
+    200 : #8097af,
+    300 : #4d6d8f,
+    400 : #264d77,
+    500 : #002e5f,
+    600 : #002957,
+    700 : #00234d,
+    800 : #001d43,
+    900 : #001232,
+    A100 : #6a8cff,
+    A200 : #3765ff,
+    A400 : #043eff,
+    A700 : #0035ea,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
 $my-primary-color :(
   50 : #e2e6ec,
     100 : #b7c2cf,
@@ -103,7 +136,8 @@ $my-warn-color:(
 );
 
 // definición de paleta
-$my-primary-color: mat.define-palette($my-primary-color);
+// $my-primary-color: mat.define-palette($my-primary-color,400,800);
+$my-primary-color: mat.define-palette($md-mcgpalette0);
 $my-accent-color: mat.define-palette($my-accent-color,600);
 $my-warn-color: mat.define-palette($my-warn-color,500, 900);
 
@@ -131,3 +165,148 @@ $my-theme: mat.define-light-theme((
 // aplicando el tema globalmente
 @include mat.all-component-themes($my-theme);
 //@include mat.snack-bar-theme($my-snack-theme);
+
+.warn-1 {
+  background-color: #cd1f1f;
+  color: #ffffff;
+}
+
+.primary-200 {
+  background-color: #8097af;
+  color: #000000;
+}
+
+.primary-400 {
+  background-color: #264d77;
+  color: #ffffff;
+}
+
+.primary-A100 {
+  background-color: #6a8cff;
+  color: #000000;
+}
+
+// Spinner
+.lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-grid div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0f325e;
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 8px;
+  left: 8px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 8px;
+  left: 32px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 8px;
+  left: 56px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 32px;
+  left: 8px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 32px;
+  left: 32px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 32px;
+  left: 56px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 56px;
+  left: 8px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 56px;
+  left: 32px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 56px;
+  left: 56px;
+  animation-delay: -1.6s;
+}
+// .lds-grid div:nth-child(1) {
+//   top: 8px;
+//   left: 8px;
+//   animation-delay: 0s;
+// }
+// .lds-grid div:nth-child(2) {
+//   top: 8px;
+//   left: 32px;
+//   animation-delay: -0.4s;
+// }
+// .lds-grid div:nth-child(3) {
+//   top: 8px;
+//   left: 56px;
+//   animation-delay: -0.8s;
+// }
+// .lds-grid div:nth-child(4) {
+//   top: 32px;
+//   left: 8px;
+//   animation-delay: -0.4s;
+// }
+// .lds-grid div:nth-child(5) {
+//   top: 32px;
+//   left: 32px;
+//   animation-delay: -0.8s;
+// }
+// .lds-grid div:nth-child(6) {
+//   top: 32px;
+//   left: 56px;
+//   animation-delay: -1.2s;
+// }
+// .lds-grid div:nth-child(7) {
+//   top: 56px;
+//   left: 8px;
+//   animation-delay: -0.8s;
+// }
+// .lds-grid div:nth-child(8) {
+//   top: 56px;
+//   left: 32px;
+//   animation-delay: -1.2s;
+// }
+// .lds-grid div:nth-child(9) {
+//   top: 56px;
+//   left: 56px;
+//   animation-delay: -1.6s;
+// }
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Controles dataTable
+#linea {
+  display: inline-block;
+}
+
+// footer
+.center {
+  display: flex;
+  justify-content: space-between;
+}
